@@ -86,41 +86,5 @@ main{
   	writeln("z2_u = ", z2_u, ";");
   	writeln("z2_n = ", z2_n, ";");
 
-/* 	IF I WANT TO SOLVE THE SCALARIZED NORMALIZED METHOD USING ALL THE COLUMNS
-  	  	
-  	// model to minimze F1+F2 normalized
-  	var model = "modelF1+F2Normalized.mod";
-	var masterSource = new IloOplModelSource(model);
-  	var masterDef = new IloOplModelDefinition(masterSource);
-  	var masterOpl = new IloOplModel(masterDef, masterCplex); 
-  	
-  	// adding maxf1, maxf2, minf1, minf2, and w to the problem
-   	var normData = new IloOplDataElements();
-   	normData.w = w;
-  	normData.z1_u = z1_u;
-	normData.z2_u = z2_u;
-	normData.z1_n = z1_n;
-	normData.z2_n = z2_n;
-	
-	masterOpl.addDataSource(normData);
-	masterOpl.addDataSource(masterData);
-   	masterOpl.generate();
-  	
-  	writeln("\n### SCARALIZED CSP: MIN w*H1 + (1-w)G2 ###\n");
-
-  	if(masterCplex.solve()){
-		for(var p in masterOpl.patterns){
-      		if(masterOpl.cut[p].solutionValue > 0){
-        		writeln("Pattern: ", p, " used ", masterOpl.cut[p].solutionValue, " times");
-      		}
-    	}
-    	
-    	writeln("\nNUMBER OF OBJECTS USED: ", masterOpl.f1);
-    	writeln("NUMBER OF CUTTING PATTERNS USED: ", masterOpl.f2);
-  	}else{
-  		writeln("-- NO SOLUTION :O --");
-  	}
-  	
-  	masterOpl.end();*/
   	status;
 }
