@@ -29,14 +29,14 @@ The cutting stock problem is of great importance for industries that deal with t
   
   subject to: **sum(p in patterns) p.fill[i]\*cut[p] >= demands[i]  for all item i**
 
-### Model 0
-  Model 0 is the Column Generation tool used to solve some models bellow.
+### Model 0-
+  Model 0 is the Column Generation tool used to solve some models bellow, which is a specific Knapsack Problem, using the duals variables of each model.
   
 ### Model 1
-  Model 1 minimizes only ***f1***, but using the same constraint set. For this, we used Column Generation (model 0)
+  Model 1 minimizes only ***f1***, but using the same constraint set. For this, we used Column Generation (model 0-1)
 
 ### Model 2
-  Model 1 minimizes ***f1 + f2***. For this, we also used Column Generation (model 0).
+  Model 1 minimizes ***f1 + f2***. For this, we also used Column Generation (model 0-2).
   
 ### Model 3
   Model 3 solves the two objectives apart, and find the Utopia point (z_u) and Nadir point (z_n) of each function. For this, we solved the models exactly, ie, enumerating all the feasable cutting patterns.
@@ -50,7 +50,7 @@ The cutting stock problem is of great importance for industries that deal with t
    * h1 = (f1 - z1_u)/(z1_n - z1_u)
    * h2 = (f2 - z2_u)/(z2_n - z2_u)
    
-  For this, we used Column Generation (model 0).
+  For this, we used Column Generation (model 0-4).
    
  ### Model 5 (e-constraint)
   Model 4 minimizes two models:
